@@ -34,13 +34,13 @@ int main() {
             }
             
             // Check for invalid input
-			if (input.front() != '-' && ispunct(input.front())) {
-				throw runtime_error("Input has invalid format");
-			}
+	    if (input.front() != '-' && ispunct(input.front())) {
+		throw runtime_error("Input has invalid format");
+	    }
 
-			if (input.back() != '=') {
-				throw runtime_error("'=' is not found");
-			}
+	    if (input.back() != '=') {
+		throw runtime_error("'=' is not found");
+	    }
 
             for (int i = 0; i < input.size(); i++) {
                 if (isalpha(input.at(i))) {
@@ -49,13 +49,13 @@ int main() {
                     throw runtime_error("Input has invalid symbols");
                 }
 
-				if (input.at(i) == '/' && input.at(i+1) == '0') {
-					throw runtime_error("Cannot divide by zero");
-				}
+		if (input.at(i) == '/' && input.at(i+1) == '0') {
+			throw runtime_error("Cannot divide by zero");
+		}
 
-				if (input.at(i) != '=' && (ispunct(input.at(i)) && ispunct(input.at(i + 1)))) {
-					throw runtime_error("Must have number between symbols");
-				}
+		if (input.at(i) != '=' && (ispunct(input.at(i)) && ispunct(input.at(i + 1)))) {
+			throw runtime_error("Must have number between symbols");
+		}
             }
         } catch (runtime_error& excpt) {
             // Display error message and handle error by going back to prompt
